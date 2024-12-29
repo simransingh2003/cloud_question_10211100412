@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import CustomLink from '../components/CustomLink';  // Import CustomLink component
 import Image from 'next/image'; // Import Image component for optimized images
-import '../styles/Kripa.css'; // Ensure the CSS path is correct
+
+import '../styles/about.css' // Ensure the CSS path is correct
 
 export default function About() {
   return (

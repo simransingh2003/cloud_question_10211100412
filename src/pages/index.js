@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import CustomLink from '../components/CustomLink'; // Import the CustomLink component
 import Image from 'next/image'; // Import Image component for optimized images
-import '../styles/Kripa.css'; // Import CSS file
-
+import '../styles/index.css';
+ // Import CSS file
+import '../styles/Kripa.css'
 export default function Home() {
   return (
     <div>
@@ -116,6 +117,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Contact Us Section */}
       <section id="contact" className="contact">

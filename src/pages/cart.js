@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import CustomLink from '../components/CustomLink';  // Import the CustomLink component
-import Image from 'next/image'; // Import Image component for optimized images
+import Image from 'next/image';
 import { useState, useEffect } from 'react';  // Import useState and useEffect from React
-import Link from 'next/link'; // Import Link for navigation
+import CustomLink from '../components/CustomLink'; // Import CustomLink for navigation
 import '../styles/Kripa.css';  // Make sure this is the correct path for your CSS file
 
 export default function Cart() {
@@ -35,11 +34,11 @@ export default function Cart() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* Navbar */}
+      {/* Header Section */}
       <header className="header">
         <div className="container">
           <div className="logo-container">
-            <Image src="/images/output-onlinepngtools.png" alt="Kripa Pharma Limited Logo" className="logo" width={50} height={50} />
+            <Image  src="/images/output-onlinepngtools.png"  alt="Kripa Pharma Limited Logo" className="logo" width={50} height={50} />
           </div>
           <nav className="navbar">
             <ul className="nav-menu">
@@ -49,20 +48,25 @@ export default function Cart() {
               <li><CustomLink href="/products"><a>Our Products</a></CustomLink></li>
               <li><CustomLink href="/contact"><a>Contact Us</a></CustomLink></li>
               <li><CustomLink href="/profile"><a>Profile</a></CustomLink></li>
+              <li><CustomLink href="/register"><a>Register</a></CustomLink></li>
+              <li><CustomLink href="/login"><a>Login</a></CustomLink></li>
+            
             </ul>
           </nav>
           <div className="icons8-cart-50">
-            <Link href="/cart">
+            <CustomLink href="/cart">
               <a>
                 <Image src="/images/icons8-cart-50.png" alt="Shopping Cart Icon" width={50} height={50} />
               </a>
-            </Link>
+            </CustomLink>
           </div>
-          <Link href="/order">
+          <CustomLink href="/order">
             <a className="cta">Place an Order</a>
-          </Link>
+          </CustomLink>
         </div>
       </header>
+
+
 
       {/* Cart Section */}
       <main className="cart-container">
@@ -100,10 +104,32 @@ export default function Cart() {
         </div>
       </main>
 
-      {/* Footer Section */}
-      <footer>
-        <p>&copy; 2024 Kripa Pharma Limited. All Rights Reserved</p>
-      </footer>
+       {/* Contact Us Section */}
+       <section id="contact" className="contact">
+        <div className="container">
+          <h2>Contact Us</h2>
+          <p>For inquiries, reach us at:</p>
+          <div className="contact-details">
+            <div className="contact-item">
+              <p><strong>Office Address:</strong></p>
+              <p>
+                KRIPA PHARMA LTD,<br />
+                P.O.BOX 15305, Accra, Ghana.<br />
+                Phone: +233-26-40-00000 or +233-302-236489<br />
+                Email: <a href="mailto:kripapharmagh@gmail.com">kripapharmagh@gmail.com</a>
+              </p>
+              <a href="https://wa.me/233264000000" target="_blank">
+                              <Image
+                                src="/images/whatsapp_icon.png"
+                                alt="Send WhatsApp Message"
+                                width={30}
+                                height={30}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Link to external JavaScript file (if needed) */}
       <script src="/assets/js/Kripa.js" defer></script> {/* Ensure correct path if this script is needed */}

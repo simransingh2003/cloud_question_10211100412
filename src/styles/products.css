@@ -1,0 +1,47 @@
+/* Base styles for product container */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #009900; /* Green border */
+  background-color: #ffffff; /* White background */
+  border-radius: 10px;
+}
+
+/* Styles for product images */
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #009900; /* Green border */
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Styles for product information */
+.product-info {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #009900; /* Green text */
+  margin-bottom: 10px;
+}
+
+/* Specific project name styling */
+.project-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Utility class for spacing */
+.spacing {
+  margin-top: 20px;
+}
+
+/* Container for all products */
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

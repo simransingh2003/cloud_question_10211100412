@@ -1,19 +1,58 @@
-import styles from '../styles/kripa.css';
+import '../styles/Kripa.css';
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import CustomLink from '../components/CustomLink';  // Import CustomLink component
-
+import CustomLink from '../components/CustomLink';
 
 const suppliers = [
-  { id: 1, name: "MYLAN LAB INTERNATIONAL", range: "Female Reproductive Product Range", products: ["Product A", "Product B", "Product C"] },
-  { id: 2, name: "TORRENT INDIA", range: "Psychotropic Range", products: ["Product X", "Product Y", "Product Z"] },
-  { id: 3, name: "KLM LABS – MUMBAI", range: "Dermatological and Ophthalmology Range", products: ["Product M", "Product N", "Product O"] },
-  { id: 4, name: "TABLETS MEDOPHARMA – CHENNAI (TMPL)", range: "Antibiotics and Amino Acid Infusion", products: ["Product D", "Product E", "Product F"] },
-  { id: 5, name: "NABROS PHARMA – AHMEDABAD", range: "Phospholipids Range", products: ["Product P", "Product Q", "Product R"] },
-  { id: 6, name: "ASOJ LIMITED – VADODARA", range: "Soft Gel Multivitamins", products: ["Product G", "Product H", "Product I"] },
-  { id: 7, name: "AXA PARENTERALS LIMITED – INDIA", range: "Parenteral Solutions and Infusions", products: ["Product J", "Product K", "Product L"] },
-  { id: 8, name: "SFH INTERNATIONAL", range: "Registration Agent and Distributor", products: ["Service A", "Service B", "Service C"] },
+  { 
+    id: 1, 
+    name: "MYLAN LAB INTERNATIONAL", 
+    range: "Female Reproductive Product Range", 
+    products: ["Product A", "Product B", "Product C", "NSAIDs", "Anti-Ulcerants", "Anti-Diabetics"] 
+  },
+  { 
+    id: 2, 
+    name: "TORRENT INDIA", 
+    range: "Psychotropic Range", 
+    products: ["Product X", "Product Y", "Product Z", "Antispasmodics", "Vitamins and Minerals"] 
+  },
+  { 
+    id: 3, 
+    name: "KLM LABS – MUMBAI", 
+    range: "Dermatological and Ophthalmology Range", 
+    products: ["Skin Ointments", "Eye and Ear Preparations", "Cardio and Liver Products"] 
+  },
+  { 
+    id: 4, 
+    name: "TABLETS MEDOPHARMA – CHENNAI (TMPL)", 
+    range: "Antibiotics and Amino Acid Infusion", 
+    products: ["Product D", "Product E", "Product F", "Anti-Ulcerants"] 
+  },
+  { 
+    id: 5, 
+    name: "NABROS PHARMA – AHMEDABAD", 
+    range: "Phospholipids Range", 
+    products: ["Product P", "Product Q", "Product R", "Vitamins and Minerals"] 
+  },
+  { 
+    id: 6, 
+    name: "ASOJ LIMITED – VADODARA", 
+    range: "Soft Gel Multivitamins", 
+    products: ["Product G", "Product H", "Product I", "Skin Ointments"] 
+  },
+  { 
+    id: 7, 
+    name: "AXA PARENTERALS LIMITED – INDIA", 
+    range: "Parenteral Solutions and Infusions", 
+    products: ["Product J", "Product K", "Product L", "Eye and Ear Preparations"] 
+  },
+  { 
+    id: 8, 
+    name: "SFH INTERNATIONAL", 
+    range: "Registration Agent and Distributor", 
+    products: ["Service A", "Service B", "Service C", "Cardio and Liver Products"] 
+  },
 ];
 
 const Suppliers = () => {
@@ -26,103 +65,73 @@ const Suppliers = () => {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Suppliers</title>
+        <title>Our Suppliers - Kripa Pharma Limited</title>
+        <meta name="description" content="Explore our trusted suppliers and their product ranges at Kripa Pharma Limited." />
       </Head>
 
-      {/* Navbar */}
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.logoContainer}>
-            <Image src="/images/output-onlinepngtools.png" alt="Kripa Pharma Limited Logo" width={100} height={100} />
+      {/* Header Section */}
+      <header className="header">
+        <div className="container">
+          <div className="logo-container">
+            <Image
+              src="/images/output-onlinepngtools.png"
+              alt="Kripa Pharma Limited Logo"
+              className="logo"
+              width={200}
+              height={100}
+            />
           </div>
-          <nav className={styles.navbar}>
-            <ul className={styles.navMenu}>
-              <li><CustomLink href="/home"><a>Home</a></CustomLink></li>
-              <li><CustomLink href="/about"><a>About Us</a></CustomLink></li>
-              <li><CustomLink href="/suppliers"><a>Our Suppliers</a></CustomLink></li>
-              <li><CustomLink href="/products"><a>Our Products</a></CustomLink></li>
-              <li><CustomLink href="/contact"><a>Contact Us</a></CustomLink></li>
-              <li><CustomLink href="/profile"><a>Profile</a></CustomLink></li>
+          <nav className="navbar">
+            <ul className="navMenu">
+              <li><CustomLink href="/">Home</CustomLink></li>
+              <li><CustomLink href="/about">About Us</CustomLink></li>
+              <li><CustomLink href="/suppliers">Our Suppliers</CustomLink></li>
+              <li><CustomLink href="/products">Our Products</CustomLink></li>
+              <li><CustomLink href="/contact">Contact Us</CustomLink></li>
+              <li><CustomLink href="/profile">Profile</CustomLink></li>
+              <li><CustomLink href="/register">Register</CustomLink></li>
+              <li><CustomLink href="/login">Login</CustomLink></li>
             </ul>
           </nav>
-          <div className={styles.cartIcon}>
+          <div className="cartIcon">
             <CustomLink href="/cart">
-              <Image src="/images/icons8-cart-50.png" alt="Shopping Cart Icon" width={50} height={50} />
+              <Image src="/images/icons8-cart-50.png" alt="Shopping Cart" width={50} height={50} />
             </CustomLink>
           </div>
-          <CustomLink href="/order" className={styles.cta}>Place an Order</CustomLink>
+          <CustomLink href="/order" className="cta">Place an Order</CustomLink>
         </div>
       </header>
 
       {/* Main Content */}
-      <main>
-        <section className={styles.suppliersContainer}>
-          {suppliers.map(supplier => (
-            <div key={supplier.id} className={styles.supplierCard}>
-              <div className={styles.supplierInfo}>
-                <h2>{supplier.name}</h2>
-                <p>{supplier.range}</p>
-                <button className={styles.showProductsBtn} onClick={() => toggleProducts(supplier.id)}>
-                  View Products
-                </button>
-              </div>
+      <main className="mainContent">
+        <section className="suppliersContainer">
+          <h1>Our Suppliers</h1>
+          {suppliers.map((supplier) => (
+            <div key={supplier.id} className="supplierCard">
+              <h2>{supplier.name}</h2>
+              <p>{supplier.range}</p>
+              <button className="showProductsBtn" onClick={() => toggleProducts(supplier.id)}>
+                {activeProduct === supplier.id ? "Hide Products" : "View Products"}
+              </button>
               {activeProduct === supplier.id && (
-                <div className={styles.productsList}>
-                  <ul>
-                    {supplier.products.map((product, index) => (
-                      <li key={index}>{product}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="productsList">
+                  {supplier.products.map((product, index) => (
+                    <li key={index}>{product}</li>
+                  ))}
+                </ul>
               )}
             </div>
           ))}
         </section>
       </main>
 
-      {/* Footer (Contact Us Section) */}
-      <section className={styles.contact}>
-        <div className={styles.container}>
+      {/* Footer */}
+      <footer className="contact">
+        <div className="container">
           <h2>Contact Us</h2>
-          <p>For inquiries, reach us at:</p>
-          <div className={styles.contactDetails}>
-            <div className={styles.contactItem}>
-              <p><strong>Office Address:</strong></p>
-              <p>KRIPA PHARMA LTD,<br /> P.O.BOX 15305, Accra. Ghana.<br />
-                Phone: +233-26-40-00000 or +233-302-236489<br />
-                Email: <a href="mailto:kripapharmagh@gmail.com">kripapharmagh@gmail.com</a>
-              </p>
-              <p>
-                <CustomLink href="https://wa.me/233264000000" target="_blank">
-                  <Image src="/images/whatsapp_icon.png" alt="Send WhatsApp Message" width={30} height={30} />
-                </CustomLink>
-              </p>
-            </div>
-            <div className={styles.contactItem}>
-              <p><strong>Contact Person:</strong> Mr. Rishikesh Mahatma (Director)</p>
-              <p>Phone: 0561-555000 or 0561-777000<br />
-                Email: <a href="mailto:rishikeshmahatma@gmail.com">rishikeshmahatma@gmail.com</a>
-              </p>
-              <p>
-                <CustomLink href="https://wa.me/233561555000" target="_blank">
-                  <Image src="/images/whatsapp_icon.png" alt="Send WhatsApp Message" width={30} height={30} />
-                </CustomLink>
-              </p>
-            </div>
-            <div className={styles.contactItem}>
-              <p><strong>General Inquiries:</strong></p>
-              <p>Email: <a href="mailto:kripapharmagh@gmail.com">kripapharmagh@gmail.com</a></p>
-              <p>
-                <CustomLink href="https://wa.me/233264000000" target="_blank">
-                  <Image src="/images/whatsapp_icon.png" alt="Send WhatsApp Message" width={30} height={30} />
-                </CustomLink>
-              </p>
-            </div>
-          </div>
+          <p>Reach us at <a href="mailto:kripapharmagh@gmail.com">kripapharmagh@gmail.com</a>.</p>
         </div>
-      </section>
+      </footer>
     </>
   );
 };

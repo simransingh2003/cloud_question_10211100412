@@ -2,7 +2,9 @@ import { useState } from 'react';
 import Head from 'next/head'; // Import Head component from next/head
 import Image from 'next/image';
 import CustomLink from '../components/CustomLink';  // Import the CustomLink component
-import styles from '../styles/order.css';  // Import the CSS module
+import styles from '../styles/Order.css' 
+
+
 
 const Order = () => {
   const [name, setName] = useState('');
@@ -15,7 +17,7 @@ const Order = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/order/submit-order', {
+      const response = await fetch('http://localhost:3000/api/order/submit-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, product, quantity, address }),

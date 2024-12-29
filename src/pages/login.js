@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import  '../styles/login_register.css'; 
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -26,6 +27,8 @@ export default function Login() {
   };
 
   return (
+
+    
     <div className="form-container">
       <form className="form" onSubmit={handleLogin}>
         <h2>{isAdminMode ? 'Admin Login' : 'User Login'}</h2>

@@ -1,0 +1,89 @@
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar, .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-menu, .cart-icon {
+    order: -1; /* Move icons to the top */
+    margin-left: auto;
+  }
+   /* Contact Us Section */
+.contact {
+padding: 30px 15px; /* Reduced padding for a smaller container */
+background: #4CAF50;
+color: white;
+text-align: center;
+animation: fadeInUp 1s ease-in-out;
+font-family: 'Arial', sans-serif;
+}
+
+.contact h2 {
+font-size: 1.8rem; /* Smaller font size */
+margin-bottom: 15px; /* Reduced margin */
+text-transform: uppercase;
+letter-spacing: 1.5px; /* Reduced letter-spacing */
+border-bottom: 2px solid white; /* Smaller border */
+display: inline-block;
+padding-bottom: 8px; /* Reduced padding */
+}
+
+.contact p {
+margin: 8px 0; /* Reduced margin */
+font-size: 1rem; /* Smaller font size */
+font-weight: 400;
+}
+
+.contact .contact-details {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px; /* Reduced gap between items */
+text-align: left;
+}
+
+.contact .contact-item {
+flex: 1 1 250px; /* Smaller base size */
+background-color: rgba(255, 255, 255, 0.1);
+padding: 15px; /* Reduced padding */
+border-radius: 8px; /* Slightly smaller border-radius */
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
+}
+
+.contact .contact-item p {
+margin: 8px 0; /* Reduced margin */
+color: white;
+}
+
+.about-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-logo img {
+  width: 80px;
+  height: auto;
+}
+
+.contact strong {
+font-weight: 700;
+font-size: 1rem; /* Smaller font size */
+color: #ffd700;
+}
+
+}
