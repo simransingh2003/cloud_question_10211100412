@@ -39,7 +39,7 @@ body {
 }
 
 
-* Navbar Styles */
+/* Navbar Styles */
 .navbar {
     background-color: #28a745; /* Green background */
     display: flex;
@@ -409,7 +409,7 @@ body {
 
 /*supplier page css*/
 
-* {
+.page {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
