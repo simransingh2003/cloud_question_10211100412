@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head'; // Import Head component from next/head
 import Image from 'next/image';
 import CustomLink from '../components/CustomLink';  // Import the CustomLink component
-import styles from '../styles/Order.css' 
+import '../styles/Order.css'; 
 
 
 
