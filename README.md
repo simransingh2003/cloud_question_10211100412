@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 This is the Project Structure
 
@@ -14,3 +15,6 @@ kirpa_pharma_ltd/
 ├── next.config.js    # Next.js configuration
 ├── node_modules/     # Installed packages
 ├── yarn.lock or package-lock.json # Dependency lock file
+=======
+# cloud_question_10211100412
+>>>>>>> 07e737db6dcab4b9c73455278efb93c5508a106f
