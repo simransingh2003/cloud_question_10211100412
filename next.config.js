@@ -1,6 +1,9 @@
-module.exports = {
-  webpack(config) {
-    config.optimization.minimize = false;
-    return config;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    optimizeCss: false,
   },
 };
+
+module.exports = nextConfig;

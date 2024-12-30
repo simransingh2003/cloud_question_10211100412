@@ -19,5 +19,10 @@ export default NextAuth({
       }
       return token;
     },
+    async session({ session, token }) {
+      session.accessToken = token.accessToken; // Attach the accessToken to the session
+      return session;
+    },
   },
+  debug: true, // Optional: Enable debugging
 });

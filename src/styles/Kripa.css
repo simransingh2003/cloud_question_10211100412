@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -14,7 +14,7 @@ body {
     padding: 10px 20px;
 }
 
-/* Header Styles */
+
 .header {
     background: #4CAF50;
     color: white;
@@ -22,26 +22,26 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeInDown 1s ease-in-out;
 }
-/* Logo Container */
+
 .logo-container {
     width: 120px;
     height: 120px;
-    background-color: white; /* White circle background */
-    border-radius: 50%; /* Makes the background circular */
+    background-color: white; 
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo {
-    width: 100px; /* Adjust the logo size if necessary */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px; 
+    height: auto; 
 }
 
 
-/* Navbar Styles */
+
 .navbar {
-    background-color: #28a745; /* Green background */
+    background-color: #28a745; 
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
@@ -70,18 +70,18 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #d4edda; /* Light green on hover */
+    color: #d4edda; 
 }
 
-/* Dropdown Menu */
+
 .dropdown-menu {
     list-style: none;
     position: absolute;
-    top: 100%; /* Below the parent menu */
+    top: 100%; 
     left: 0;
-    background-color: #074b17; /* Same green as navbar */
+    background-color: #074b17; 
     padding: 10px 0;
-    display: none; /* Hidden by default */
+    display: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -95,16 +95,16 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background-color: #050806; /* Darker green for hover */
+    background-color: #050806; 
     color: #fff;
 }
 
-/* Show dropdown on hover */
+
 .nav-menu .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* "Place an Order" button */
+
 .cta {
     background: #ffd700;
     color: #4CAF50;
@@ -120,7 +120,7 @@ body {
     color: #4CAF50;
 }
 
-/* Profile and Cart Icons */
+
 .profile-menu, .cart-icon {
     margin-left: 20px;
 }
@@ -155,7 +155,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .navbar, .nav-menu {
         flex-direction: column;
@@ -169,13 +169,13 @@ body {
         flex-direction: column;
     }
     .profile-menu, .cart-icon {
-        order: -1; /* Move icons to the top */
+        order: -1; 
         margin-left: auto;
     }
 }
 
 
-/* Hero Section */
+
 .hero {
     background: url('/images/modern_lab.png') no-repeat center center/cover;
     height: 90vh;
@@ -238,25 +238,24 @@ body {
 }
 
 
-/* About Us Section Styles */
 .about-us-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 20px; /* Added padding around the container */
+    padding: 20px; 
 }
 
 .about-us-text {
     flex: 1;
     max-width: 600px;
-    padding: 20px; /* Added padding inside the text container */
+    padding: 20px; 
 }
 
 .about-us-text h2 {
     font-size: 2.5rem;
     color: #4CAF50;
-    margin-bottom: 20px; /* Added margin below the heading */
+    margin-bottom: 20px; 
 }
 
 .about-us-text p {
@@ -264,26 +263,26 @@ body {
     line-height: 1.8;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px; /* Added margin below paragraphs */
+    margin-bottom: 20px; 
 }
 
 
   .about-us-image {
-    display: flex; /* Centering the image */
-    justify-content: center; /* Centering the image */
-    align-items: center; /* Centering the image */
-    padding: 20px; /* Add some padding for spacing */
-    background-color: #f9f9f9; /* Background color for the container */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: auto; /* Center the container */
-    max-width: 600px; /* Max width of the container */
+    margin: auto;
+    max-width: 600px; 
 }
 
 .about-us-image img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the box while maintaining its aspect ratio */
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -302,7 +301,7 @@ body {
   .learn-more-btn:hover {
     background-color: #45a049;
   }
-/* Products Section */
+
 .products {
     padding: 50px 20px;
     text-align: center;
@@ -313,12 +312,12 @@ body {
 
 .products h2 {
     font-size: 2.5rem;
-    color: #2a7f5e; /* Greenish color for the title */
+    color: #2a7f5e;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 3px;
     display: inline-block;
-    border-bottom: 3px solid #2a7f5e; /* Border under the title for emphasis */
+    border-bottom: 3px solid #2a7f5e; 
     padding-bottom: 10px;
 }
 
@@ -332,15 +331,15 @@ body {
 .products .categories-heading {
     margin-top: 30px;
     font-size: 1.2rem;
-    color: #2a7f5e; /* Greenish color for the subheading */
+    color: #2a7f5e; 
     font-weight: 500;
 }
 
 .products .product-categories {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Space between categories */
-    flex-wrap: wrap; /* Ensure categories wrap to the next line on smaller screens */
+    gap: 40px; 
+    flex-wrap: wrap; 
     margin-top: 20px;
 }
 

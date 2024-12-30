@@ -1,42 +1,41 @@
-import { useState } from 'react';
-import Head from 'next/head'; // Import Head component from next/head
-import Image from 'next/image';
-import CustomLink from '../components/CustomLink';  // Import the CustomLink component
-import '../styles/Order.css'; 
+import React, { useState } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import orderStyles from "../styles/Order.module.css";
+import "../styles/global.css";
 
+const OrderPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [product, setProduct] = useState("NSAIDs");
+  const [quantity, setQuantity] = useState("");
+  const [address, setAddress] = useState("");
 
-
-const Order = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [product, setProduct] = useState('NSAIDs');
-  const [quantity, setQuantity] = useState('');
-  const [address, setAddress] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/order/submit-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/order/submit-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, product, quantity, address }),
       });
-      const data = await response.json();
+
+      const result = await response.json();
 
       if (response.ok) {
-        alert('Order placed successfully');
-        setName('');
-        setEmail('');
-        setProduct('NSAIDs');
-        setQuantity('');
-        setAddress('');
+        alert("Order placed successfully!");
+        setName("");
+        setEmail("");
+        setProduct("NSAIDs");
+        setQuantity("");
+        setAddress("");
       } else {
-        alert(`Error: ${data.message}`);
+        alert(`Error: ${result.message}`);
       }
     } catch (error) {
+      console.error("Order submission failed:", error);
       alert(`Error: ${error.message}`);
-      console.error(error);
     }
   };
 
@@ -48,58 +47,48 @@ const Order = () => {
         <title>Place an Order - Kripa Pharma Limited</title>
       </Head>
 
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.logoContainer}>
+      <header className={orderStyles.header}>
+        <div className={orderStyles.container}>
+          <div className={orderStyles.logoContainer}>
             <Image
               src="/images/output-onlinepngtools.png"
               alt="Kripa Pharma Limited Logo"
-              className={styles.logo}
+              className={orderStyles.logo}
               width={200}
               height={50}
             />
           </div>
-          <nav className={styles.navbar}>
-            <ul className={styles.navMenu}>
-              <li>
-                <CustomLink href="/KripaIndex"><a>Home</a></CustomLink>
-              </li>
-              <li>
-                <CustomLink href="/about"><a>About Us</a></CustomLink>
-              </li>
-              <li>
-                <CustomLink href="/suppliers"><a>Our Suppliers</a></CustomLink>
-              </li>
-              <li className={styles.dropdown}>
-                <CustomLink href="/products"><a>Our Products</a></CustomLink>
-                <ul className={styles.dropdownMenu}>
-                  <li><CustomLink href="/products#NSAIDs"><a>NSAIDs</a></CustomLink></li>
-                  <li><CustomLink href="/products#AntiUlcerants"><a>Anti-Ulcerants</a></CustomLink></li>
-                  <li><CustomLink href="/products#AntiDiabetics"><a>Anti-Diabetics</a></CustomLink></li>
-                  <li><CustomLink href="/products#Antispasmodics"><a>Antispasmodics</a></CustomLink></li>
-                  <li><CustomLink href="/products#VitaminsMinerals"><a>Vitamins and Minerals</a></CustomLink></li>
-                  <li><CustomLink href="/products#CardioLiver"><a>Cardio and Liver Products</a></CustomLink></li>
-                  <li><CustomLink href="/products#EyeEarPreparations"><a>Eye and Ear Preparations</a></CustomLink></li>
-                  <li><CustomLink href="/products#SkinOintments"><a>Skin Ointments</a></CustomLink></li>
+          <nav className={orderStyles.navbar}>
+            <ul className={orderStyles.navMenu}>
+              <li><Link href="/KripaIndex">Home</Link></li>
+              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/suppliers">Our Suppliers</Link></li>
+              <li className={orderStyles.dropdown}>
+                <Link href="/products">Our Products</Link>
+                <ul className={orderStyles.dropdownMenu}>
+                  <li><Link href="/products#NSAIDs">NSAIDs</Link></li>
+                  <li><Link href="/products#AntiUlcerants">Anti-Ulcerants</Link></li>
+                  <li><Link href="/products#AntiDiabetics">Anti-Diabetics</Link></li>
+                  <li><Link href="/products#Antispasmodics">Antispasmodics</Link></li>
+                  <li><Link href="/products#VitaminsMinerals">Vitamins and Minerals</Link></li>
+                  <li><Link href="/products#CardioLiver">Cardio and Liver Products</Link></li>
+                  <li><Link href="/products#EyeEarPreparations">Eye and Ear Preparations</Link></li>
+                  <li><Link href="/products#SkinOintments">Skin Ointments</Link></li>
                 </ul>
               </li>
-              <li>
-                <CustomLink href="/contact"><a>Contact Us</a></CustomLink>
-              </li>
+              <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </nav>
-          <CustomLink href="#order-popup" className={styles.cta}>
+          <Link href="#order-popup" className={orderStyles.cta}>
             Place an Order
-          </CustomLink>
+          </Link>
         </div>
       </header>
 
-      <div className={styles.mainContent}>
-        <div className={styles.orderContainer}>
-          <div className={styles.orderHeader}>
-            <h1>Place an Order</h1>
-          </div>
-          <form onSubmit={handleSubmit} className={styles.orderForm}>
+      <main className={orderStyles.mainContent}>
+        <div className={orderStyles.orderContainer}>
+          <h1 className={orderStyles.orderHeader}>Place an Order</h1>
+          <form onSubmit={handleSubmit} className={orderStyles.orderForm}>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -155,18 +144,18 @@ const Order = () => {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               required
-            ></textarea>
+            />
 
             <button type="submit">Place Order</button>
           </form>
         </div>
-      </div>
+      </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2024 Kripa Pharma Limited. All Rights Reserved.</p>
+      <footer className={orderStyles.footer}>
+        <p>© 2024 Kripa Pharma Limited. All Rights Reserved.</p>
       </footer>
     </>
   );
 };
 
-export default Order;
+export default OrderPage;
